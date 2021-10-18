@@ -1,3 +1,5 @@
+part of adaptix;
+
 class Resizer<T>{
 
  late final T _xSmall;

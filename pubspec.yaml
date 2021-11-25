@@ -1,6 +1,6 @@
 name: adaptix
 description: A new Flutter package project.
-version: 0.0.2
+version: 0.0.3
 homepage:
 
 environment:
@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  nested: ^1.0.0
 
 dev_dependencies:
   flutter_test:

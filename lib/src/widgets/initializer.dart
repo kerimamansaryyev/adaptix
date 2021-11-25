@@ -1,12 +1,12 @@
 part of adaptix;
 
-class SizeInitializer extends StatelessWidget {
+class SizeInitializer extends SingleChildStatelessWidget {
   const SizeInitializer({required this.builder}) : super(key: const Key('sizeInit'));
 
   final Widget Function(BuildContext context) builder;
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildWithChild(BuildContext context, _) {
    return OrientationBuilder(
     builder: (context, orientation) {
       return LayoutBuilder(

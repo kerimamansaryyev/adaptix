@@ -1,6 +1,7 @@
 library adaptix;
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:nested/nested.dart';
 export 'package:adaptix/adaptix.dart';
 part 'package:adaptix/src/models/sizing.dart';
 part 'package:adaptix/src/models/resizer.dart';

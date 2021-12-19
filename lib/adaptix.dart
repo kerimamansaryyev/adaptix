@@ -2,6 +2,7 @@ library adaptix;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:nested/nested.dart';
+import 'package:provider/provider.dart';
 export 'package:adaptix/adaptix.dart';
 part 'package:adaptix/src/models/sizing.dart';
 part 'package:adaptix/src/models/resizer.dart';
@@ -18,6 +19,15 @@ abstract class Adaptix{
   static double largeScreenScaleFactor = 1.2;
   static double xLargeScreenScaleFactor = 1.25;
   static double commonScaleFactor = 1.0;
+
+  ///use under the context of [SizeInitializer] to notify widgets with constant constructors
+  static void depend(BuildContext context){
+    try {
+      Provider.of<_SizingNotifierAdapter>(context, listen: true);
+    } catch (e) {
+      throw FlutterError('Use method Adaptix.depend only inside build methods under SizeInitializer widget\' context');
+    }
+  }
 
 }
 

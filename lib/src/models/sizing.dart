@@ -1,5 +1,16 @@
 part of adaptix;
 
+_SizingNotifierAdapter _adapter = _SizingNotifierAdapter();
+
+class _SizingNotifierAdapter with ChangeNotifier{
+
+  void setSizing(BoxConstraints constraints, Orientation orientation){
+    _Sizing().._init(constraints, orientation);
+    notifyListeners();
+  }
+
+}
+
 class _Sizing{
   static late double _screenWidth;
   static late double _screenHeight;
@@ -8,7 +19,7 @@ class _Sizing{
   static late double aspectRatio;
   static late EdgeInsets systemPadding;
 
-  void init( BoxConstraints constraints, Orientation orientation ){
+  void _init( BoxConstraints constraints, Orientation orientation ){
     if( orientation == Orientation.portrait ){
       _screenWidth = constraints.maxWidth;
       _screenHeight = constraints.maxHeight;

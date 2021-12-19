@@ -11,8 +11,10 @@ class SizeInitializer extends SingleChildStatelessWidget {
     builder: (context, orientation) {
       return LayoutBuilder(
         builder: (context, constraints) {
-          _Sizing().init(constraints, orientation);  
-          return builder(context);
+          return ChangeNotifierProvider.value(
+            value: _adapter..setSizing(constraints, orientation),
+            builder: (_, __) => builder(context),
+          );
         },
       );
     },
